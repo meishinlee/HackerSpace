@@ -6,7 +6,7 @@ require('dotenv').config()
 
 const db =
   process.env.MONGODB_URI ||
-  "mongodb+srv://tma8:123456public1998@cluster0.nrnmc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://tma8:123456public1998@cluster0.nrnmc.mongodb.net/hackerspace?retryWrites=true&w=majority";
 //Connect to MongoDB
 mongoose
   .connect(db, {
