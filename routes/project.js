@@ -11,8 +11,8 @@ router.get("/", function (req, res) {
   });
 
 // Get project based on search criteria
-router.post("/", function (req, res) {
-    const data = req.body; // is a json file specifies criterias like {"lgbtq":"Yes", "projectName":"projectName"}
+router.get("/filters", function (req, res) {
+    const data = req.params; // is a json file specifies criterias like {"lgbtq":"Yes", "projectName":"projectName"}
     const query = {}
     for (var key in data) {
         if (data.hasOwnProperty(key)) {

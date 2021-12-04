@@ -13,10 +13,10 @@ const projectSchema = new mongoose.Schema({
   email: {
     type: String,
   },
-  projectName: {
+  "project name": {
     type: String,
   },
-  projectDescription: {
+  "project description": {
     type: String,
   },
   pronouns: {
