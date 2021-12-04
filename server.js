@@ -16,6 +16,10 @@ mongoose
   .then(() => console.log("Connected to database..."))
   .catch((err) => console.log(err));
 
+// api routes and paths
+const project = require("./routes/project");
+app.use("/api/project", project);
+
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, ()=>{
