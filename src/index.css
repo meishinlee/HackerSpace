@@ -10,6 +10,35 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/* Edited Code */
+
+header.masthead {
+  position: relative;
+  overflow: hidden;
+  padding-top: calc(7rem + 72px);
+  padding-bottom: 7rem;
+  background-image: url('images/main.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.projects_container {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.project_item{
+  padding: 1em;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+/* End of Edited Code */
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -11329,17 +11358,6 @@ html {
   letter-spacing: 0.1rem;
 }
 
-header.masthead {
-  position: relative;
-  overflow: hidden;
-  padding-top: calc(7rem + 72px);
-  padding-bottom: 7rem;
-  background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: scroll;
-  background-size: cover;
-}
 header.masthead .masthead-content {
   z-index: 1;
   position: relative;
