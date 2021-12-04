@@ -1,2 +1,2 @@
-# project-board
-TechTogether Seattle 2021
+# Hacker Space
+An app that allows people to hack together!
