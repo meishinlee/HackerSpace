@@ -37,22 +37,40 @@ footer{
   padding-top: calc(8rem + 72px);
   padding-bottom: 7rem;
   background: black;
-  background-image: url('.\images\footer_new.png');
+  background-image: url('./images/footer_new.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
+.projects{
+  padding: 4em;
+}
+
+.project_text{
+  color:white;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.project_text_email{
+  color:red;
+  font-family: 'Press Start 2P', cursive;
+}
 
 .projects_container {
-  padding: 2em;
+  padding: 4em;
   display: flex;
   flex-direction: column;
 }
 
 .project_item{
-  padding: 1em;
+  padding: 4em;
   margin-bottom: 20px;
   border: 1px solid black;
+}
+
+.footer_text{
+  color:white;
+  font-family: 'Press Start 2P', cursive;
 }
 
 p, details{
