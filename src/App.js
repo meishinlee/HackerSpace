@@ -160,41 +160,42 @@ class App extends React.Component {
           </div>
         </section>
 
-        <section id="scroll">
+        <section class="projects">
           <div class="projects_container">
 
               <div class="project_item">
-              <h2> Project Name </h2>
-              <h6> Project Owner </h6>
-              <p> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <h2 class="project_text"> Project Name </h2>
+              <h6 class="project_text"> Project Owner </h6>
+              <p class="project_text"> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
               <details>
               <summary>
-               <span id="open">read more</span>
-               <span id="close">close</span>
+               <span class="project_text" id="open">read more</span>
+               <span class="project_text" id="close">close</span>
               </summary>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                <p class="project_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
               </details><br/>
-              <a href={`mailto:emailxyz@tech.com`}> Click here to send us an email!!!</a>
+              <a class="project_text_email" href={`mailto:emailxyz@tech.com`}> Click here to send us an email!!!</a>
               </div>
 
               <div class="project_item">
-              <h2> Project Name </h2>
-              <h6> Project Owner </h6>
-              <p> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              <h2 class="project_text"> Project Name </h2>
+              <h6 class="project_text"> Project Owner </h6>
+              <p class="project_text"> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
               <details>
               <summary>
-               <span id="open">read more</span>
-               <span id="close">close</span>
+               <span class="project_text" id="open">read more</span>
+               <span class="project_text" id="close">close</span>
               </summary>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-              </details> </p>
+                <p class="project_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+              </details><br/>
+              <a class="project_text_email" href={`mailto:emailxyz@tech.com`}> Click here to send us an email!!!</a>
               </div>
 
           </div>
         </section>
 
         <footer class="py-5 bg-black">
-            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Your Website 2021</p></div>
+            <div class="container px-5"><p class="m-0 text-center text-white small footer_text">Copyright &copy; HackerSpace 2021</p></div>
         </footer>
 
       </main>
