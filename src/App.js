@@ -74,7 +74,7 @@ class App extends React.Component {
       results = this.state.cardArray;
     }
      return (
-      <main>
+      <main class="main-container">
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
             <div class="container px-5">
                 <a class="navbar-brand" href="#page-top">Hacker Space</a>
@@ -93,7 +93,6 @@ class App extends React.Component {
                 <div class="container px-5">
                     <h1 class="masthead-heading mb-0">Hacker Space</h1>
                     <h2 class="masthead-subheading mb-0">The choice is in your hands.</h2>
-                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Browse projects</a>
                 </div>
             </div>
         </header>
@@ -106,38 +105,98 @@ class App extends React.Component {
             </span>
         </div>
 
-        <form class="form-inline">
-          <div class="form-group">
-            <label >Has a female lead</label>
-            <select  class="form-control" >
-                <option> </option>
-                <option>Yes</option>
-                <option>No</option>
-
-              </select>
-              
-            <label >Veteran Led</label>
-            <select  class="form-control" >
-                <option> </option>
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-              
-              <label >LGBTQ+ Led</label>
-            <select  class="form-control" >
-                <option> </option>
-                <option>Yes</option>
-                <option>No</option>
-              </select>
-
-          </div>
-        </form>
+        <div class="dropdown-filter">
+            <div class="instructions"></div>
+            <div class="dropdown-container">
+                <div class="dropdown-button noselect">
+                    <div class="dropdown-label">Gender</div>
+                    <div class="dropdown-quantity">(<span class="quantity">Any</span>)</div>
+                    <i class="fa fa-filter"></i>
+                </div>
+                <div class="dropdown-list" style={{"display": "none;"}}>
+                    <input type="search" placeholder="Search states" class="dropdown-search"/>
+                    <ul></ul>
+                </div>
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown-button noselect">
+                    <div class="dropdown-label">LGBTQ+ Led</div>
+                    <div class="dropdown-quantity">(<span class="quantity">Any</span>)</div>
+                    <i class="fa fa-filter"></i>
+                </div>
+                <div class="dropdown-list" style={{"display": "none;"}}>
+                    <input type="search" placeholder="Search states" class="dropdown-search"/>
+                    <ul></ul>
+                </div>
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown-button noselect">
+                    <div class="dropdown-label">Veteran Led</div>
+                    <div class="dropdown-quantity">(<span class="quantity">Any</span>)</div>
+                    <i class="fa fa-filter"></i>
+                </div>
+                <div class="dropdown-list" style={{"display": "none;"}}>
+                    <input type="search" placeholder="Search states" class="dropdown-search"/>
+                    <ul></ul>
+                </div>
+            </div>
+        
+            <div class="dropdown-container">
+                <div class="dropdown-button noselect">
+                    <div class="dropdown-label">Project Category</div>
+                    <div class="dropdown-quantity">(<span class="quantity">Any</span>)</div>
+                    <i class="fa fa-filter"></i>
+                </div>
+                <div class="dropdown-list" style={{"display": "none;"}}>
+                    <input type="search" placeholder="Search states" class="dropdown-search"/>
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
 
         <section id="scroll">
           <div class="projects_container">
             {results}
           </div>
         </section>
+
+        <section id="scroll">
+          <div class="projects_container">
+
+              <div class="project_item">
+              <h2> Project Name </h2>
+              <h6> Project Owner </h6>
+              <p> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <details>
+              <summary>
+               <span id="open">read more</span>
+               <span id="close">close</span>
+              </summary>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+              </details><br/>
+              <a href={`mailto:emailxyz@tech.com`}> Click here to send us an email!!!</a>
+              </div>
+
+              <div class="project_item">
+              <h2> Project Name </h2>
+              <h6> Project Owner </h6>
+              <p> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+              <details>
+              <summary>
+               <span id="open">read more</span>
+               <span id="close">close</span>
+              </summary>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+              </details> </p>
+              </div>
+
+          </div>
+        </section>
+
+        <footer class="py-5 bg-black">
+            <div class="container px-5"><p class="m-0 text-center text-white small">Copyright &copy; Your Website 2021</p></div>
+        </footer>
+
       </main>
     );
   }
