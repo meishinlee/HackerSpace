@@ -18,7 +18,6 @@ router.get("/filters", function (req, res) {
     }
     Project.find(query, function(err, projects){
         if (err) return console.error(err);
-        console.log(projects);
         res.send(projects);
     })
   });

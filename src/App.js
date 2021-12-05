@@ -85,22 +85,24 @@ class App extends React.Component {
     if (this.state["project name"] != null){
       filters["project name"] = this.state["project name"];
     }
-    if (this.state.femaleLed != null){
+    if (this.state.femaleLed != null && this.state.femaleLed != "Select one:"){
       filters.femaleLed = this.state.femaleLed;
     }
-    if (this.state.lgbtq != null){
+    if (this.state.lgbtq != null && this.state.lgbtq != "Select one:"){
       filters.lgbtq = this.state.lgbtq;
     }
-    if (this.state.veteran != null){
+    if (this.state.veteran != null && this.state.veteran != "Select one:"){
       filters.veteran = this.state.veteran;
     }
-    if (this.state.disabled != null){
+    if (this.state.disabled != null && this.state.disabled != 'Select one:'){
       filters.disabled = this.state.disabled;
     }
-    if (this.state.projectCategory != null){
+    if (this.state.projectCategory != null && this.state.disabled != 'Select one:'){
       filters.projectCategory = this.state.projectCategory;
     }
+    console.log(filters)
     let projects = APIProject.getFilteredProjects(filters).then(data => {
+      console.log(data)
       this.setState({projects:data})
       this.displayAll()
     }
