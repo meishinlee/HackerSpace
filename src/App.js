@@ -8,17 +8,33 @@ class App extends React.Component {
     super(props);
     this.state = {
       "project name": null,
-      pronouns:null,
+      femaleLed:null,
       lgbtq:null,
       disabled:null,
       veteran:null,
+      projectCategory:null,
       projects:null,
       cardArray:null
     };
   }
 
-  projectNameHandler(e) {
-    this.setState({ "project name": e.target.value}); // just copy paste this code to the onSelect attribute of each dropdown
+  handleChangeProjectName(e) {
+    this.setState({ "project name": e.target.value});
+  }
+  handleChangeFemaleLed(e) {
+    this.setState({ femaleLed: e.target.value});
+  }
+  handleChangeLGBTQPLed(e){
+    this.setState({lgbtq:e.target.value});
+  }
+  handleChangeVeteranLed(e){
+    this.setState({veteran:e.target.value});
+  }
+  handleChangeDisabledLed(e){
+    this.setState({disabled:e.target.value});
+  }
+  handleChangeProjectName(e){
+    this.setState({projectCategory:e.target.value});
   }
 
   getFilteredData(){
@@ -36,14 +52,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log("component mounted");
     let projects = APIProject.getAllProjects().then(data => {
-      //this.setState({projects:data}),
-      //() => this.displayAll()
-      console.log(data)
-      // console.log(data)
       this.setState({projects:data})
-      // console.log(this.state.projects)
       this.displayAll()
     }
     );
@@ -52,7 +62,6 @@ class App extends React.Component {
   displayAll() {
     let projectListHTMLArr = [];
     let data = this.state.projects;
-    // console.log(data);
     for (var i = 0; i < data.length; i++){
       projectListHTMLArr.push(
         <Card
@@ -68,6 +77,33 @@ class App extends React.Component {
       );
     }
     this.setState({cardArray:projectListHTMLArr});
+  }
+
+  displayFiltered(){
+    const filters = {};
+    if (this.state["project name"] != null){
+      filters["project name"] = this.state["project name"];
+    }
+    if (this.state.femaleLed != null){
+      filters.femaleLed = this.state.femaleLed;
+    }
+    if (this.state.lgbtq != null){
+      filters.lgbtq = this.state.lgbtq;
+    }
+    if (this.state.veteran != null){
+      filters.veteran = this.state.veteran;
+    }
+    if (this.state.disabled != null){
+      filters.disabled = this.state.disabled;
+    }
+    if (this.state.projectCategory != null){
+      filters.projectCategory = this.state.projectCategory;
+    }
+    let projects = APIProject.getFilteredProjects(filters).then(data => {
+      this.setState({projects:data})
+      this.displayAll()
+    }
+    );
   }
 
   render(){
@@ -103,17 +139,17 @@ class App extends React.Component {
 
         <div class="input-group">
             <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-            aria-describedby="search-addon" />
-            <span class="input-group-text border-0" id="search-addon">
-              <i class="fas fa-search"></i>
+            aria-describedby="search-addon" onChange={(e)=>this.handleChangeProjectName(e)}/>
+            <span class="input-group-text border-0" id="search-addon" onClick={() => this.displayFiltered()}>
+              <i class="fas fa-search">Search</i>
             </span>
         </div>
 
 
         <div class="form-group">
           <div class = "form-item">
-            <label >Female Led?</label>
-            <select  class="form-control" >
+            <label >Female or Non-binary Led?</label>
+            <select  class="form-control" onChange={(e)=>this.handleChangeFemaleLed(e)}>
                 <option> Select one: </option>
                 <option>Yes</option>
                 <option>No</option>
@@ -122,7 +158,7 @@ class App extends React.Component {
 
           <div class = "form-item">
             <label >Veteran Led?</label>
-            <select  class="form-control" >
+            <select  class="form-control" onChange={(e)=>this.handleChangeVeteranLed(e)}>
                 <option> Select one: </option>
                 <option>Yes</option>
                 <option>No</option>
@@ -131,7 +167,16 @@ class App extends React.Component {
 
           <div class = "form-item">
             <label >LGBTQ+ Led?</label>
-            <select  class="form-control" >
+            <select  class="form-control" onChange={(e)=>this.handleChangeLGBTQPLed(e)}>
+                <option> Select one: </option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+          </div>
+
+          <div class = "form-item">
+            <label >Disabled Led?</label>
+            <select  class="form-control" onChange={(e)=>this.handleChangeDisabledLed(e)}>
                 <option> Select one: </option>
                 <option>Yes</option>
                 <option>No</option>
@@ -140,7 +185,7 @@ class App extends React.Component {
 
           <div class = "form-item">
               <label> Project Category </label>
-              <select  class="form-control" >
+              <select  class="form-control" onChange={(e)=>this.handleChangeProjectCategory(e)}>
                 <option> Select one: </option>
                 <option>Machine Learning/Artificial Intelligence</option>
                 <option>Robotics</option>
@@ -154,19 +199,7 @@ class App extends React.Component {
 
         <section id="scroll">
           <div class="projects_container">
-          {/* {results} */}
-            <div class="project_item">
-              <h3> Project Name </h3>
-              <h5> Project Owner <p id="text1"> (she/her) </p> </h5>
-              <p> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              <details>
-              <summary>
-               <span id="open">read more</span>
-               <span id="close">close</span>
-              </summary>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-              </details>
-            </div>
+            {results}
           </div>
         </section> 
 

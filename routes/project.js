@@ -12,21 +12,15 @@ router.get("/", function (req, res) {
 
 // Get project based on search criteria
 router.get("/filters", function (req, res) {
-    const data = req.params; // is a json file specifies criterias like {"lgbtq":"Yes", "projectName":"projectName"}
-    const query = {}
-    for (var key in data) {
-        if (data.hasOwnProperty(key)) {
-            if (key == "project name"){
-                query[key] = '/'+data[key]+'/';
-            } else {
-                query[key] = data[key];
-            }
-        }
+    const query = req.query; // is a json file specifies criterias like {"lgbtq":"Yes", "projectName":"projectName"}
+    if (query["project name"] != undefined){
+      query["project name"] = '/'+query["project name"]+'/';
     }
-    Project.find(query)
-      .then((projects) => {
+    Project.find(query, function(err, projects){
+        if (err) return console.error(err);
+        console.log(projects);
         res.send(projects);
-      });
+    })
   });
 
 module.exports = router;
