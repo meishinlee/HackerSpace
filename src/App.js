@@ -37,7 +37,7 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log("component mounted");
-    let projects = APIProject.getAllProjects().then(function(data){
+    let projects = APIProject.getAllProjects().then(data => {
       //this.setState({projects:data}),
       //() => this.displayAll()
       console.log(data)
