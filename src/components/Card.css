@@ -110,14 +110,19 @@ details[open] #close{display:block;}
 }
 
 .footer {
-    height: 120px;
-    padding-top: 3em;
-    padding-bottom: 3em;
-    background-size: 100px;
-    background: black;
-    background-image: url(/src/images/footer.png);
-    max-height: fit-content;
-    background-repeat: no-repeat;
+  height: 120px;
+  padding-top: 3em;
+  padding-bottom: 1em;
+  background-size: 900px;
+  max-height: fit-content;
+  background-repeat: no-repeat;
+}
+
+.footer_text{
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 8px;
+  padding-right: 3em; padding-left: 3em;
 }
 
 /* End of Edited Code */

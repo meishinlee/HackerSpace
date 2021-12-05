@@ -83,14 +83,15 @@ class App extends React.Component {
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#!">Sign Up</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#page-top"> Home </a></li>
+                        <li class="nav-item"><a class="nav-link" href="//forms.gle/nUWeKcENLTWiBJX67" target="_blank"> Add Project</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#footer"> Contact </a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <header class="masthead text-center text-white">
+        <header class="masthead text-center text-white" id="page-top">
             <div class="masthead-content">
                 <div class="container px-5">
                     <h1 class="masthead-heading mb-0">Hacker Space</h1>
@@ -108,29 +109,30 @@ class App extends React.Component {
             </span>
         </div>
 
+
         <div class="form-group">
           <div class = "form-item">
-            <label >Female lead</label>
+            <label >Female Led?</label>
             <select  class="form-control" >
-                <option> </option>
+                <option> Select one: </option>
                 <option>Yes</option>
                 <option>No</option>
             </select>
           </div>
 
           <div class = "form-item">
-            <label >Veteran Led</label>
+            <label >Veteran Led?</label>
             <select  class="form-control" >
-                <option> </option>
+                <option> Select one: </option>
                 <option>Yes</option>
                 <option>No</option>
             </select>
           </div>
 
           <div class = "form-item">
-            <label >LGBTQ+ Led</label>
+            <label >LGBTQ+ Led?</label>
             <select  class="form-control" >
-                <option> </option>
+                <option> Select one: </option>
                 <option>Yes</option>
                 <option>No</option>
               </select>
@@ -139,7 +141,7 @@ class App extends React.Component {
           <div class = "form-item">
               <label> Project Category </label>
               <select  class="form-control" >
-                <option> </option>
+                <option> Select one: </option>
                 <option>Machine Learning/Artificial Intelligence</option>
                 <option>Robotics</option>
                 <option>Web development</option>
@@ -168,9 +170,9 @@ class App extends React.Component {
           </div>
         </section> 
 
-        <div class="footer">
-        
-        </div>
+        <div class="footer footer_text">
+        Inclusion is the practice of providing everyone with equal access to opportunities and resources. Inclusion efforts in the workplace help to give traditionally marginalized groups, like those based on gender, race or even those with physical or mental disabilities, a means for them to feel equal in the workplace. Inclusive actions, like creating employee resource groups or hosting information sessions, make the workplace a safer, more respectful environment for all employees.
+       </div>
 
       </main>
     );
