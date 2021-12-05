@@ -56,6 +56,11 @@ footer{
   font-family: 'Press Start 2P', cursive;
 }
 
+.project_text_readmore{
+  color:blue;
+  font-family: 'Press Start 2P', cursive;
+}
+
 .projects_container {
   padding: 4em;
   display: flex;

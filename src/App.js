@@ -37,11 +37,11 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log("component mounted");
-    let projects = APIProject.getAllProjects().then(function(data){
-      //this.setState({projects:data}),
-      //() => this.displayAll()
-      console.log(data)
+    let projects = APIProject.getAllProjects().then(data => {
+      // console.log(data)
       this.setState({projects:data})
+      // console.log(this.state.projects)
+      this.displayAll()
     }
     );
   }
@@ -49,11 +49,12 @@ class App extends React.Component {
   displayAll() {
     let projectListHTMLArr = [];
     let data = this.state.projects;
-    console.log(data);
+    // console.log(data);
     for (var i = 0; i < data.length; i++){
       projectListHTMLArr.push(
         <Card
           projectName={data[i]['project name']}
+          projectDescription={data[i]['project description']}
           ownerName={data[i].name}
           email={data[i].email}
           pronouns={data[i].pronouns}
@@ -155,40 +156,6 @@ class App extends React.Component {
         <section id="scroll">
           <div class="projects_container">
             {results}
-          </div>
-        </section>
-
-        <section class="projects">
-          <div class="projects_container">
-
-              <div class="project_item">
-              <h2 class="project_text"> Project Name </h2>
-              <h6 class="project_text"> Project Owner </h6>
-              <p class="project_text"> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              <details>
-              <summary>
-               <span class="project_text" id="open">read more</span>
-               <span class="project_text" id="close">close</span>
-              </summary>
-                <p class="project_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-              </details><br/>
-              <a class="project_text_email" href={`mailto:emailxyz@tech.com`}> Click here to send us an email!!!</a>
-              </div>
-
-              <div class="project_item">
-              <h2 class="project_text"> Project Name </h2>
-              <h6 class="project_text"> Project Owner </h6>
-              <p class="project_text"> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-              <details>
-              <summary>
-               <span class="project_text" id="open">read more</span>
-               <span class="project_text" id="close">close</span>
-              </summary>
-                <p class="project_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-              </details><br/>
-              <a class="project_text_email" href={`mailto:emailxyz@tech.com`}> Click here to send us an email!!!</a>
-              </div>
-
           </div>
         </section>
 
