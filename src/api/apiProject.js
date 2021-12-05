@@ -1,12 +1,12 @@
 // get all projects
 function getAllProjects() {
     var path = "/api/project/";
-    console.log("getting all projects");
     return fetch(path, {
       method: "get",
     })
       .then((response) => {
-        return response.json();
+        console.log(response);
+        return response;
       })
       .catch((err) => {
         console.log(err);
@@ -26,3 +26,8 @@ function getFilteredProjects(filters) {
         console.log(err);
       });
   }
+
+export default {
+    getAllProjects,
+    getFilteredProjects,
+};

@@ -36,17 +36,13 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    try {
-      console.log("component mounted");
-      let projects = APIProject.getAllProjects().then((data) =>
-        this.setState({
-          projects: data,
-        }, 
-        () => this.displayAll())
-      );
-    } catch (error) {
-      console.log(error);
-    }
+    console.log("component mounted");
+    let projects = APIProject.getAllProjects().then((data) =>
+      this.setState({
+        projects: data,
+      }, 
+      () => this.displayAll())
+    );
   }
 
   displayAll() {

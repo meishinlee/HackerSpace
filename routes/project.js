@@ -4,8 +4,11 @@ const Project = require("../models/project");
 
 // Get all projects
 router.get("/", function (req, res) {
-    Project.find()
+    console.log("finding projects");
+    Project.find({})
       .then((projects) => {
+        console.log("found projects");
+        console.log(projects);
         res.send(projects);
       });
   });
