@@ -31,10 +31,13 @@ header.masthead {
   background-size: cover;
 }
 
-footer.masthread{
+footer{
   position: relative;
+  overflow: hidden;
+  padding-top: calc(8rem + 72px);
+  padding-bottom: 7rem;
   background: black;
-  background-image: url('./images/footer.png');
+  background-image: url('.\images\footer_new.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
