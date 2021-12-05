@@ -75,7 +75,6 @@ class App extends React.Component {
     }
      return (
       <main>
-        <div class="text title_container" id="name1"> Hacker Space </div>
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
             <div class="container px-5">
                 <a class="navbar-brand" href="#page-top">Hacker Space</a>

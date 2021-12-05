@@ -12,6 +12,12 @@
  */
 
 /* Edited Code */
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+
+.website_title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 60px;
+}
 
 header.masthead {
   position: relative;
