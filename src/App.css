@@ -32,6 +32,15 @@ header.masthead {
   background-size: cover;
 }
 
+footer.masthread{
+  position: relative;
+  background: black;
+  background-image: url('./images/footer.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
 .projects_container {
   padding: 2em;
   display: flex;

@@ -138,6 +138,10 @@ class App extends React.Component {
             {results}
           </div>
         </section>
+
+        <footer class="masthead text-center text-white">
+        </footer>
+
       </main>
     );
   }
