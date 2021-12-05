@@ -19,7 +19,7 @@ header.masthead {
   padding-top: calc(8rem + 72px);
   padding-bottom: 7rem;
   background: black;
-  background-image: url('./images/test.png');
+  background-image: url('../images/test.png');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;

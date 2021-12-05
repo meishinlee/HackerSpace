@@ -1,6 +1,7 @@
 // get all projects
 function getAllProjects() {
     var path = "/api/project/";
+    console.log("getting all projects");
     return fetch(path, {
       method: "get",
     })
