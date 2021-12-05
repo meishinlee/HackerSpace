@@ -11,7 +11,8 @@ function getAllProjects() {
 
   // get projects through filters
 function getFilteredProjects(filters) {
-    var path = "/api/project/filters?"+JSON.stringify(filters);
+    var query = require('querystring').stringify(filters);
+    var path = "/api/project/filters?"+query;
     return fetch(path, {
       method: "get",
     })
