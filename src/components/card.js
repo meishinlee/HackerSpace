@@ -6,7 +6,7 @@ export default class Card extends React.Component {
     return (
         <div class="project_item">
             <h3 class="project_text"> {this.props.projectName} </h3>
-            <h5 class="project_text"> {this.props.ownerName} <p class="project_text"> {this.props.pronouns} </p></h5>
+            <h5 class="project_text"> {this.props.ownerName} <p id="text1"> {this.props.pronouns} </p></h5>
             <p class="project_text"> Description: {this.props.projectDescription.slice(0, 100)}</p>
             <details>
             <summary>

@@ -1,7 +1,7 @@
 import React from 'react';
-// import './App.css';
 import APIProject from "./api/apiProject";
 import Card from "./components/card";
+import "./effect.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -94,7 +94,7 @@ class App extends React.Component {
         <header class="masthead text-center text-white" id="page-top">
             <div class="masthead-content">
                 <div class="container px-5">
-                    <h1 class="masthead-heading mb-0">Hacker Space</h1>
+                    <h1 class="  text title_container masthead-heading mb-0">Hacker Space</h1>
                     <h2 class="masthead-subheading mb-0">The choice is in your hands.</h2>
                     <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Browse projects</a>
                 </div>
