@@ -42,7 +42,6 @@ class App extends React.Component {
       //() => this.displayAll()
       console.log(data)
       this.setState({projects:data})
-      console.log(data)
     }
     );
   }
