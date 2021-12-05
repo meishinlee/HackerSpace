@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+// import './App.css';
 import APIProject from "./api/apiProject";
 import Card from "./components/card";
 
@@ -38,13 +38,10 @@ class App extends React.Component {
   componentDidMount() {
     console.log("component mounted");
     let projects = APIProject.getAllProjects().then(data => {
-<<<<<<< HEAD
       //this.setState({projects:data}),
       //() => this.displayAll()
       console.log(data)
-=======
       // console.log(data)
->>>>>>> 1ebe5e32128861ce77855bda633a159baebd05b7
       this.setState({projects:data})
       // console.log(this.state.projects)
       this.displayAll()
@@ -98,6 +95,7 @@ class App extends React.Component {
                 <div class="container px-5">
                     <h1 class="masthead-heading mb-0">Hacker Space</h1>
                     <h2 class="masthead-subheading mb-0">The choice is in your hands.</h2>
+                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Browse projects</a>
                 </div>
             </div>
         </header>
@@ -110,64 +108,71 @@ class App extends React.Component {
             </span>
         </div>
 
-        <div class="dropdown-filter">
-            <div class="instructions"></div>
-            <div class="dropdown-container">
-                <div class="dropdown-button noselect">
-                    <div class="dropdown-label">Gender</div>
-                    <div class="dropdown-quantity">(<span class="quantity">Any</span>)</div>
-                    <i class="fa fa-filter"></i>
-                </div>
-                <div class="dropdown-list" style={{"display": "none;"}}>
-                    <input type="search" placeholder="Search states" class="dropdown-search"/>
-                    <ul></ul>
-                </div>
-            </div>
-            <div class="dropdown-container">
-                <div class="dropdown-button noselect">
-                    <div class="dropdown-label">LGBTQ+ Led</div>
-                    <div class="dropdown-quantity">(<span class="quantity">Any</span>)</div>
-                    <i class="fa fa-filter"></i>
-                </div>
-                <div class="dropdown-list" style={{"display": "none;"}}>
-                    <input type="search" placeholder="Search states" class="dropdown-search"/>
-                    <ul></ul>
-                </div>
-            </div>
-            <div class="dropdown-container">
-                <div class="dropdown-button noselect">
-                    <div class="dropdown-label">Veteran Led</div>
-                    <div class="dropdown-quantity">(<span class="quantity">Any</span>)</div>
-                    <i class="fa fa-filter"></i>
-                </div>
-                <div class="dropdown-list" style={{"display": "none;"}}>
-                    <input type="search" placeholder="Search states" class="dropdown-search"/>
-                    <ul></ul>
-                </div>
-            </div>
-        
-            <div class="dropdown-container">
-                <div class="dropdown-button noselect">
-                    <div class="dropdown-label">Project Category</div>
-                    <div class="dropdown-quantity">(<span class="quantity">Any</span>)</div>
-                    <i class="fa fa-filter"></i>
-                </div>
-                <div class="dropdown-list" style={{"display": "none;"}}>
-                    <input type="search" placeholder="Search states" class="dropdown-search"/>
-                    <ul></ul>
-                </div>
+        <div class="form-group">
+          <div class = "form-item">
+            <label >Has a female lead</label>
+            <select  class="form-control" >
+                <option> </option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+          </div>
+
+          <div class = "form-item">
+            <label >Veteran Led</label>
+            <select  class="form-control" >
+                <option> </option>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+          </div>
+
+          <div class = "form-item">
+            <label >LGBTQ+ Led</label>
+            <select  class="form-control" >
+                <option> </option>
+                <option>Yes</option>
+                <option>No</option>
+              </select>
+          </div>
+
+          <div class = "form-item">
+              <label> Project Category </label>
+              <select  class="form-control" >
+                <option> </option>
+                <option>Machine Learning/Artificial Intelligence</option>
+                <option>Robotics</option>
+                <option>Web development</option>
+                <option>Cybersecurity</option>
+                <option>Algorithmic/Research</option>
+                <option>Data analysis</option>
+              </select>
             </div>
         </div>
 
         <section id="scroll">
           <div class="projects_container">
-            {results}
-          </div>
-        </section>
+          {/* {results} */}
+          <div class="project_item">
+              <h3> Project Name </h3>
+              <h5> Project Owner <p> (she/her) </p> </h5>
+              <p> Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              <details>
+              <summary>
+               <span id="open">read more</span>
+               <span id="close">close</span>
+              </summary>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
 
-        <footer class="py-5 bg-black">
-      
-        </footer>
+                
+              </details>
+          </div>
+          </div>
+        </section> 
+
+        <div class="footer">
+        
+        </div>
 
       </main>
     );
