@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from "react-helmet";
 import APIProject from "./api/apiProject";
 import Card from "./components/card";
 import "./effect.js";
@@ -173,6 +174,9 @@ class App extends React.Component {
         <div class="footer footer_text">
         Inclusion is the practice of providing everyone with equal access to opportunities and resources. Inclusion efforts in the workplace help to give traditionally marginalized groups, like those based on gender, race or even those with physical or mental disabilities, a means for them to feel equal in the workplace. Inclusive actions, like creating employee resource groups or hosting information sessions, make the workplace a safer, more respectful environment for all employees.
        </div>
+      <Helmet>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+      </Helmet>
 
       </main>
     );
