@@ -5,12 +5,8 @@ function getAllProjects() {
       method: "get",
     })
       .then((response) => {
-        console.log(response);
-        return response;
+        return response.json();
       })
-      .catch((err) => {
-        console.log(err);
-      });
   }
 
   // get projects through filters

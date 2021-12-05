@@ -37,17 +37,20 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log("component mounted");
-    let projects = APIProject.getAllProjects().then((data) =>
-      this.setState({
-        projects: data,
-      }, 
-      () => this.displayAll())
+    let projects = APIProject.getAllProjects().then(function(data){
+      //this.setState({projects:data}),
+      //() => this.displayAll()
+      console.log(data)
+      this.setState({projects:data})
+      console.log(data)
+    }
     );
   }
 
   displayAll() {
     let projectListHTMLArr = [];
     let data = this.state.projects;
+    console.log(data);
     for (var i = 0; i < data.length; i++){
       projectListHTMLArr.push(
         <Card
