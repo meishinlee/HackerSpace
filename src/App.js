@@ -110,7 +110,7 @@ class App extends React.Component {
 
         <div class="form-group">
           <div class = "form-item">
-            <label >Has a female lead</label>
+            <label >Female lead</label>
             <select  class="form-control" >
                 <option> </option>
                 <option>Yes</option>
